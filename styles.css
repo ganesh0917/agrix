@@ -1,0 +1,721 @@
+/* ============================================
+   AGRIX - Professional Dashboard Styling
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Agricultural Color Scheme */
+    --primary-color: #4A8C2A;
+    --primary-dark: #2D5A1F;
+    --primary-light: #6BA84A;
+    --secondary-color: #D1A24E;
+    --accent-color: #8B5B29;
+    --neutral-bg: #F8F9FA;
+    --neutral-light: #E9ECEF;
+    --text-dark: #1f3a3a;
+    --text-light: #666666;
+    --border-color: #e0e0e0;
+    --bg-light: #f8faf9;
+    --white: #ffffff;
+    
+    /* Status Colors */
+    --success-color: #4CAF50;
+    --warning-color: #FFC107;
+    --error-color: #E53935;
+    --info-color: #2196F3;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease;
+}
+
+/* ============================================
+   GENERAL STYLES
+   ============================================ */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* ============================================
+   LOGIN CONTAINER
+   ============================================ */
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-card {
+    background: var(--white);
+    border-radius: 18px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    padding: 54px 38px;
+    width: 100%;
+    animation: slideUp 0.5s ease;
+    border: 1px solid #f5f5f5;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   LOGO SECTION
+   ============================================ */
+
+.logo-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo-circle {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 28px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: var(--white);
+    box-shadow: 0 12px 32px rgba(45, 106, 79, 0.2);
+    animation: bounce 0.6s ease;
+    transition: transform 0.3s ease;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.brand-name {
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--primary-dark);
+    margin-bottom: 12px;
+    letter-spacing: -0.8px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    line-height: 1.2;
+}
+
+.brand-subtitle {
+    font-size: 16px;
+    color: var(--text-light);
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    line-height: 1.5;
+}
+
+/* ============================================
+   FORM STYLES
+   ============================================ */
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-left: 2px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 18px 14px 48px;
+    font-size: 15px;
+    border: 2px solid #e8e8e8;
+    border-radius: 10px;
+    outline: none;
+    transition: var(--transition);
+    background-color: #fafbfc;
+    color: var(--text-dark);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+}
+
+.form-input::placeholder {
+    color: #a0a0a0;
+    font-weight: 400;
+}
+
+.form-input:focus {
+    border-color: var(--primary-color);
+    background-color: var(--white);
+    box-shadow: 0 0 0 5px rgba(45, 106, 79, 0.1);
+}
+
+.input-icon {
+    position: absolute;
+    left: 16px;
+    color: var(--text-light);
+    font-size: 18px;
+    pointer-events: none;
+    transition: var(--transition);
+    width: 20px;
+    text-align: center;
+}
+
+.form-input:focus ~ .input-icon {
+    color: var(--primary-color);
+}
+
+/* ============================================
+   ERROR MESSAGE
+   ============================================ */
+
+.error-message {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    background-color: var(--error-light);
+    border-left: 5px solid var(--error-color);
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--error-color);
+    font-weight: 600;
+    animation: shake 0.4s ease;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+.error-message i {
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+/* ============================================
+   FORM LINKS
+   ============================================ */
+
+.form-links {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -12px;
+}
+
+.forgot-password {
+    font-size: 13px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.forgot-password:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn-continue {
+    width: 100%;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+    color: var(--white);
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    box-shadow: 0 8px 24px rgba(45, 106, 79, 0.24);
+    margin-top: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-continue::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: left 0.3s ease;
+}
+
+.btn-continue:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(45, 106, 79, 0.32);
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+}
+
+.btn-continue:hover::before {
+    left: 100%;
+}
+
+.btn-continue:active {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(45, 106, 79, 0.15);
+}
+
+.btn-continue i {
+    font-size: 18px;
+    transition: var(--transition);
+}
+
+.btn-continue:hover i {
+    transform: translateX(6px);
+}
+
+/* ============================================
+   DIVIDER
+   ============================================ */
+
+.divider {
+    position: relative;
+    height: 1px;
+    background-color: var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.divider span {
+    background-color: var(--white);
+    padding: 0 12px;
+    font-size: 12px;
+    color: var(--text-light);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ============================================
+   NEW USER BUTTON
+   ============================================ */
+
+.btn-new-user {
+    width: 100%;
+    padding: 14px 22px;
+    background-color: var(--secondary-color);
+    color: var(--primary-dark);
+    border: 2px solid var(--primary-light);
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+
+.btn-new-user:hover {
+    background-color: var(--primary-light);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(45, 106, 79, 0.2);
+    border-color: var(--primary-color);
+}
+
+.btn-new-user:active {
+    transform: translateY(-1px);
+}
+
+.btn-new-user i {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.btn-new-user:hover i {
+    transform: scale(1.15);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer-text {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-light);
+    margin-top: 32px;
+    font-weight: 500;
+}
+
+/* ============================================
+   MODAL STYLES
+   ============================================ */
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--white);
+    border-radius: 14px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    z-index: 1001;
+    max-width: 420px;
+    width: 90%;
+    animation: modalSlideIn 0.3s ease;
+    pointer-events: auto;
+    border: 1px solid #f0f0f0;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -48%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+    pointer-events: auto;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 32px 24px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.modal-header h2 {
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--text-dark);
+    letter-spacing: -0.3px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: var(--transition);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.modal-close:hover {
+    color: var(--error-color);
+    background-color: rgba(214, 40, 40, 0.08);
+}
+
+.modal-body {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.modal-body p {
+    font-size: 15px;
+    color: var(--text-light);
+    line-height: 1.7;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+
+.modal-input {
+    margin-bottom: 0;
+}
+
+.modal-footer {
+    display: flex;
+    gap: 14px;
+    padding: 24px 32px;
+    border-top: 2px solid #f0f0f0;
+    justify-content: flex-end;
+    background-color: #fafbfc;
+    border-radius: 0 0 14px 14px;
+}
+
+.btn-primary {
+    padding: 13px 30px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 6px 16px rgba(45, 106, 79, 0.18);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(45, 106, 79, 0.3);
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+}
+
+.btn-primary:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(45, 106, 79, 0.12);
+}
+
+.btn-secondary {
+    padding: 13px 30px;
+    background-color: #ffffff;
+    color: var(--text-dark);
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+
+.btn-secondary:hover {
+    background-color: #f5f5f5;
+    transform: translateY(-3px);
+    border-color: var(--primary-light);
+    color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.btn-secondary:active {
+    transform: translateY(-1px);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 36px 28px;
+    }
+
+    .logo-circle {
+        width: 78px;
+        height: 78px;
+        font-size: 44px;
+        margin-bottom: 24px;
+    }
+
+    .brand-name {
+        font-size: 36px;
+    }
+
+    .brand-subtitle {
+        font-size: 15px;
+    }
+
+    .login-form {
+        gap: 22px;
+    }
+
+    .form-input {
+        padding: 12px 16px 12px 44px;
+        font-size: 14px;
+    }
+
+    .modal {
+        width: 95%;
+        border-radius: 12px;
+    }
+
+    .modal-header {
+        padding: 28px 24px 20px;
+    }
+
+    .modal-body {
+        padding: 24px;
+        gap: 20px;
+    }
+
+    .modal-footer {
+        padding: 20px 24px;
+        gap: 12px;
+        flex-direction: column-reverse;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+    }
+}
+
+@media (max-width: 360px) {
+    .login-card {
+        padding: 24px 16px;
+    }
+
+    .brand-name {
+        font-size: 24px;
+    }
+
+    .brand-subtitle {
+        font-size: 12px;
+    }
+
+    .logo-circle {
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+button {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    user-select: none;
+    border: none;
+}
+
+button:hover {
+    text-decoration: none;
+}
+
+button:active {
+    outline: none;
+}
+
+button:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+input:focus {
+    outline: none;
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+    body {
+        background: var(--white);
+    }
+
+    .login-card {
+        box-shadow: none;
+        border: 1px solid var(--border-color);
+    }
+}
